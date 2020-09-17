@@ -41,21 +41,15 @@ async function getStations(){
 	const dock5=document.getElementById('dock5');
 	const station_ID5=document.getElementById('station_ID5');
 
-	const i=0;
-	const response = await fetch('/info', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-
-          }
-      })
+	const response = await fetch('/info')
 	const data= await response.json();
+
+	const status_response = await fetch('/status')
+	const status_data=await status_response.json()
+
 	const r=Math.floor(Math.random() * (data.length-7))
+
 	for (let i=0; i<data.length; i++){
-      if (data.error){
-      	console.log(error)
-      	console.error(error)
-      } else {
 
 		station.textContent = data[r].name;
 		station1.textContent = data[r+1].name;
@@ -76,44 +70,80 @@ async function getStations(){
 		station_ID2.textContent = data[r+2].station_id;
 		station_ID3.textContent = data[r+3].station_id;
 		station_ID4.textContent = data[r+4].station_id;
-		station_ID5.textContent = data[r+5].station_id;
+		station_ID5.textContent = data[r+5].station_id; 
+
+		bike.textContent = status_data[r].num_bikes_available;
+		bike1.textContent = status_data[r+1].num_bikes_available;
+		bike2.textContent = status_data[r+2].num_bikes_available;
+		bike3.textContent = status_data[r+3].num_bikes_available;
+		bike4.textContent = status_data[r+4].num_bikes_available;
+		bike5.textContent = status_data[r+5].num_bikes_available;
+
+		dock.textContent = status_data[r].num_docks_available;
+		dock1.textContent = status_data[r+1].num_docks_available;
+		dock2.textContent = status_data[r+2].num_docks_available;
+		dock3.textContent = status_data[r+3].num_docks_available;
+		dock4.textContent = status_data[r+4].num_docks_available;
+		dock5.textContent = status_data[r+5].num_docks_available;
+	}
 
 
-	  	searchButton.addEventListener('submit', event => {
-	    	event.preventDefault()
-	    	//console.log(searchInput.value)
-	    	//address1.textContent = data[1].address;
-		})
-	  
-	  }
-  	}
-  	const status_response = await fetch('/status')
-	const status_data=await status_response.json()
-	for (let i=0; i<status_data.length; i++){
-		if (status_data.error){
-	      	console.log(error)
-	      	console.error(error)
-      	} else {
+  	searchButton.addEventListener('submit', async (event) => {
+    	event.preventDefault()
+    	console.log(searchInput.value)
 
-			bike.textContent = status_data[r].num_bikes_available;
-			bike1.textContent = status_data[r+1].num_bikes_available;
-			bike2.textContent = status_data[r+2].num_bikes_available;
-			bike3.textContent = status_data[r+3].num_bikes_available;
-			bike4.textContent = status_data[r+4].num_bikes_available;
-			bike5.textContent = status_data[r+5].num_bikes_available;
+		for (let i=0; i<data.length; i++){
+			if (searchInput.value===data[i].address){
 
-			dock.textContent = status_data[r].num_docks_available;
-			dock1.textContent = status_data[r+1].num_docks_available;
-			dock2.textContent = status_data[r+2].num_docks_available;
-			dock3.textContent = status_data[r+3].num_docks_available;
-			dock4.textContent = status_data[r+4].num_docks_available;
-			dock5.textContent = status_data[r+5].num_docks_available;
+				station.textContent = data[i].name;
+				address.textContent = data[i].address;
+				station_ID.textContent = data[i].station_id;
+				bike.textContent = status_data[i].num_bikes_available;
+				dock.textContent = status_data[i].num_docks_available;
 
+				station.style.display="block";
+				address.style.display="block";
+				bike.style.display="block";
+				dock.style.display="block";
+				station_ID.style.display="block"
+
+				station1.style.display="none";
+				station2.style.display="none";
+				station3.style.display="none";
+				station4.style.display="none";
+				station5.style.display="none";
+
+				address1.style.display="none";
+				address2.style.display="none";
+				address3.style.display="none";
+				address4.style.display="none";
+				address5.style.display="none";
+
+				station_ID1.style.display="none";
+				station_ID2.style.display="none";
+				station_ID3.style.display="none";
+				station_ID4.style.display="none";
+				station_ID5.style.display="none"; 
+
+				bike1.style.display="none";
+				bike2.style.display="none";
+				bike3.style.display="none";
+				bike4.style.display="none";
+				bike5.style.display="none";
+
+				dock1.style.display="none";
+				dock2.style.display="none";
+				dock3.style.display="none";
+				dock4.style.display="none";
+				dock5.style.display="none";
+				
+			} 
 		}
-  	}
+	    	
+	})
 }
 
-setInterval(getStations, 60000)
+setInterval(getStations, 10000)
 
 
 

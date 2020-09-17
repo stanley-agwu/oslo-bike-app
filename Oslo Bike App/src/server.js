@@ -61,7 +61,7 @@ app.get('/status', async function (request, response) {
     const url_response = await fetch(station_status_url)
     const data = await url_response.json()
     const stations=data.data.stations
-    response.json(stations)  
+    response.json(stations)
 })
 
 

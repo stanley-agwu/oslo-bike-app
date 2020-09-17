@@ -64,15 +64,13 @@ async function setStation(){
           marker.bindPopup(text);
         }
         my_marker = L.marker([lat, lon]).addTo(mymap);
-        var circle = L.circle([lat, lon], {
+        const circle = L.circle([lat, lon], {
                                             color: 'red',
                                             fillColor: '#f03',
                                             fillOpacity: 0.5,
                                             radius: 2000
                                         }).addTo(mymap);
         my_marker.bindPopup("<b>Hello!</b><br>You are Here.").openPopup();
-        document.getElementById('latitude').textContent = lat.toFixed(2);
-        document.getElementById('longitude').textContent = lon.toFixed(2);
       }
     })
     } else {
@@ -80,9 +78,19 @@ async function setStation(){
     }
 
   })
+  const searchButton=document.querySelector('form');
+  const searchInput=document.querySelector('input');
+  searchButton.addEventListener('submit', async (event) => {
+      event.preventDefault()
+      //console.log(searchInput.value)
+    }
+  )
+
 }
 
-setInterval(setStation, 60000)
+//setInterval(setStation, 10000)
+
+
 
 /*const form = document.querySelector('form');
     const search = document.querySelector('input');
