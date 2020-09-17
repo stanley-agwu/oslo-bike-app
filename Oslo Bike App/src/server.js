@@ -28,13 +28,19 @@ hbs.registerPartials(partialsPath);
 //Set Handlebar Routes
 app.get('/', function (req, res) {
     res.render('home', {
-      title: "Oslo Bike App!"
+      title: "Oslo City Bike"
     })
 })
 
 app.get('/stations', function (req, res) {
     res.render('stations', {
-      title: ('Bike Stations')
+      title: "Bike Stations"
+    });
+});
+
+app.get('/contact', function (req, res) {
+    res.render('contact', {
+      title: "Contact Us"
     });
 });
  
@@ -46,7 +52,8 @@ app.get('/info', async function (request, response) {
   const data = await url_response.json()
   const stations=data.data.stations
   response.json(stations)
-  console.log(`We have a total of ${stations.length} stations running right now!`)  
+  console.log(new Date())
+
 })
 
 const station_status_url="https://gbfs.urbansharing.com/oslobysykkel.no/station_status.json"
@@ -55,26 +62,9 @@ app.get('/status', async function (request, response) {
     const url_response = await fetch(station_status_url)
     const data = await url_response.json()
     const stations=data.data.stations
-    response.json(stations)
-    console.log(`We have a total of ${stations.length} stations running right now!`)  
+    response.json(stations)  
 })
 
-
-app.get('/stat', function (request, response) {
-  response.json({name: "stanley"})
-})
-
-app.post('/location', function (request, response){
-  console.log("I have a request!")
-  console.log(request.body);
-  const data=request.body;
-  response.json({
-    status: 'success',
-    statusCode: 200,
-    Latitude: data,
-    Longitude: data
-  })
-})
 
 app.get('*', function (req, res) {
     res.render('404', {

@@ -1,4 +1,3 @@
-
 getStations()
 
 async function getStations(){
@@ -115,8 +114,13 @@ async function getStations(){
 
 	  
   	}
+  	console.log(new Date())
 
 }
+
+setInterval(getStations, 60000)
+
+
 
 
 /*async function getData(){

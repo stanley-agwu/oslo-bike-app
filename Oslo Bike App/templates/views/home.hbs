@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/d5e88a923b.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -13,7 +14,7 @@
   <body>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Oslo Bike App</a>
+        <a class="navbar-brand text-uppercase" href="/">Oslo Bike App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +27,7 @@
             <li class="nav-item ">
               <a class="nav-link " href="/stations">Stations</a>
             <li class="nav-item ">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" action="/" method="POST">
@@ -38,61 +39,146 @@
       <br/>
 
       <h1>{{>header}}</h1>
-      <div class="jumbotron m-auto py-4">
-        <h4 class="font-italic">Station name:   <span id="station"></span></h4>
-        <p class="">Station address:  <span id="address"></span></p>
-        <p class="">Number of available bikes:  <span id="bike"></span></p>
-        <p class="">Number of free spaces to dock:  <span id="dock"></span></p>
-        <p class="">Station ID:  <span id="station_ID"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill" href="#" role="button">Open Map</a>
-      </div>
-      <hr class="my-4">
-      <div class="jumbotron m-auto py-4">
-        <h4 class="font-italic">Station name:   <span id="station1"></span></h4>
-        <p class="">Station address:  <span id="address1"></span></p>
-        <p class="">Number of available bikes:  <span id="bike1"></span></p>
-        <p class="">Number of free spaces to dock:  <span id="dock1"></span></p>
-        <p class="">Station ID:  <span id="station_ID1"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill" href="#" role="button">Open Map</a>
-      </div>
-      <hr class="my-4">
-      <div class="jumbotron m-auto py-4">
-        <h4 class="font-italic">Station name:   <span id="station2"></span></h4>
-        <p class="">Station address:  <span id="address2"></span></p>
-        <p class="">Number of available bikes:  <span id="bike2"></span></p>
-        <p class="">Number of free spaces to dock:  <span id="dock2"></span></p>
-        <p class="">Station ID:  <span id="station_ID2"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill" href="#" role="button">Open Map</a>
-      </div>
-      <hr class="my-4">
-      <div class="jumbotron m-auto py-4 ">
-        <h4 class="font-italic">Station name:   <span id="station3"></span></h4>
-        <p class="">Station address:  <span id="address3"></span></p>
-        <p class="">Number of available bikes:  <span id="bike3"></span></p>
-        <p class="">Number of free spaces to dock:  <span id="dock3"></span></p>
-        <p class="">Station ID:  <span id="station_ID3"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill" href="#" role="button">Open Map</a>
-      </div>
-      <hr class="my-4">
-      <div class="jumbotron m-auto py-4">
-        <h4 class="font-italic">Station name:   <span id="station4"></span></h4>
-        <p class="">Station address:  <span id="address4"></span></p>
-        <p class="">Number of available bikes:  <span id="bike4"></span></p>
-        <p class="">Number of free spaces to dock:  <span id="dock4"></span></p>
-        <p class="">Station ID:  <span id="station_ID4"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill" href="#" role="button">Open Map</a>
-      </div>
-      <hr class="my-4">
-      <div class="jumbotron m-auto py-4">
-        <h4 class="font-italic">Station name:   <span id="station5"></span></h4>
-        <p class="">Station address:  <span id="address5"></span></p>
-        <p class="">Number of available bikes:  <span id="bike5"></span></p>
-        <p class="">Number of free spaces to dock:  <span id="dock5"></span></p>
-        <p class="">Station ID:  <span id="station_ID5"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill" href="#" role="button">Open Map</a>
-      </div>
 
-      
+      <div class="row">
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="">
+          <div class="card-body">
+            <h5 class="font-italic">Station name:   <span id="station"></span></h5>
+            <p class="">Station address:  <span id="address"></span></p>
+            <p class="">Number of available bikes:  <span id="bike"></span></p>
+            <p class="">Number of free spaces to dock:  <span id="dock"></span></p>
+            <p class="">Station ID:  <span id="station_ID"></span></p>
+            <a class="btn btn-primary btn-lg rounded-pill" href="/stations" role="button">Open Map</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="">
+          <div class="card-body">
+            <h5 class="font-italic">Station name:   <span id="station1"></span></h5>
+            <p class="">Station address:  <span id="address1"></span></p>
+            <p class="">Number of available bikes:  <span id="bike1"></span></p>
+            <p class="">Number of free spaces to dock:  <span id="dock1"></span></p>
+            <p class="">Station ID:  <span id="station_ID1"></span></p>
+            <a class="btn btn-primary btn-lg rounded-pill" href="/stations" role="button">Open Map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="">
+          <div class="card-body">
+            <h5 class="font-italic">Station name:   <span id="station2"></span></h5>
+            <p class="">Station address:  <span id="address2"></span></p>
+            <p class="">Number of available bikes:  <span id="bike2"></span></p>
+            <p class="">Number of free spaces to dock:  <span id="dock2"></span></p>
+            <p class="">Station ID:  <span id="station_ID2"></span></p>
+            <a class="btn btn-primary btn-lg rounded-pill" href="/stations" role="button">Open Map</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="">
+          <div class="card-body">
+            <h5 class="font-italic">Station name:   <span id="station3"></span></h5>
+            <p class="">Station address:  <span id="address3"></span></p>
+            <p class="">Number of available bikes:  <span id="bike3"></span></p>
+            <p class="">Number of free spaces to dock:  <span id="dock3"></span></p>
+            <p class="">Station ID:  <span id="station_ID3"></span></p>
+            <a class="btn btn-primary btn-lg rounded-pill" href="/stations" role="button">Open Map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="">
+          <div class="card-body">
+            <h5 class="font-italic">Station name:   <span id="station4"></span></h5>
+            <p class="">Station address:  <span id="address4"></span></p>
+            <p class="">Number of available bikes:  <span id="bike4"></span></p>
+            <p class="">Number of free spaces to dock:  <span id="dock4"></span></p>
+            <p class="">Station ID:  <span id="station_ID4"></span></p>
+            <a class="btn btn-primary btn-lg rounded-pill" href="/stations" role="button">Open Map</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="">
+          <div class="card-body">
+            <h5 class="font-italic">Station name:   <span id="station5"></span></h5>
+            <p class="">Station address:  <span id="address5"></span></p>
+            <p class="">Number of available bikes:  <span id="bike5"></span></p>
+            <p class="">Number of free spaces to dock:  <span id="dock5"></span></p>
+            <p class="">Station ID:  <span id="station_ID5"></span></p>
+            <a class="btn btn-primary btn-lg rounded-pill" href="/stations" role="button">Open Map</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container py-5 mt-auto py-md-5 border-top">
+      <div class="row">
+        <div class="col-6 col-md-3 pt-5">
+          <small class="d-block mb-3 text-muted">© 2020 <span class="footer-text text-uppercase"><a href="/"> Oslo City Bike</a></span> <br/>All Rights Reserved</small>
+          <div>
+            <small class="text-muted">Follow Us</small>
+        <div><a class="btn btn-ht-facebook-blue btn-ht-xs border"
+          target="_blank" href="https://facebook.com/" rel="nofollow"
+          title="Share on Facebook"><i class="text-primary bg-white fab fa-facebook-f">
+          </i></a></div>
+        <div><a class="btn btn-ht-twitter-blue btn-ht-xs border"
+          target="_blank" href="https://twitter.com/" rel="nofollow"
+          title="Share on Twitter"><i class="text-primary bg-white fab fa-twitter-square">
+          </i></a></div>
+        <div><a class="btn btn-ht-instagram-blue btn-ht-xs border"
+          target="_blank" href="https://instagram.com/" rel="nofollow"
+          title="Share on Instagram"><i class="text-dark bg-white fab fa-instagram-square">
+          </i></a></div>
+        <div><a class="btn btn-ht-youtube-red btn-ht-xs border"
+          target="_blank" href="https://youtube.com/" rel="nofollow"
+          title="Share on Youtube"><i class="text-danger bg-white fab fa-youtube">
+          </i></a></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 pt-5">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">New features</a></li>
+            <li><a class="text-muted" href="#">Ride Plans</a></li>
+            <li><a class="text-muted" href="#">Complaints</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 pt-5">
+          <h5>Company</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/contact">About Us</a></li>
+            <li><a class="text-muted" href="/contact">Contact Us</a></li>
+            <li><a class="text-muted" href="/contact">Support Us</a></li>
+            <li><a class="text-muted" href="/stations">Stations</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 pt-5">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/contact">Our Team</a></li>
+            <li><a class="text-muted" href="/stations">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy Policy</a></li>
+            <li><a class="text-muted" href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mt-5 ml-auto made">
+          <small>Made with <i class="fas fa-heart text-danger"></i> in Norway</small></div>
+        </div>
+    </footer>
+
     </div>
 
     <!-- Optional JavaScript -->
