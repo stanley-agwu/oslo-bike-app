@@ -52,7 +52,6 @@ app.get('/info', async function (request, response) {
   const data = await url_response.json()
   const stations=data.data.stations
   response.json(stations)
-  console.log(new Date())
 
 })
 
@@ -72,18 +71,3 @@ app.get('*', function (req, res) {
     });
 });
 
-
-
-
-/*app.get('/status', function (req, res) {
-  getStationStatus((error, stations_status)=>{
-    if (error){
-      return res.send({
-        error})
-    } else {
-        res.send({
-          stations_status
-      })
-    }
-  })
-});*/

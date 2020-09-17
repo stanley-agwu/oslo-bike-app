@@ -16,7 +16,7 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
     <style type="text/css">
-      #bikeMap{
+      #bikeMap, #my_bikeMap{
         height: 450px;
       }
     </style>
@@ -57,11 +57,14 @@
       <br/>
 
       <div class="jumbotron m-auto py-4">
-        <h4 class="font-italic">Client Location   <span id="station"></span></h4>
-        <p class="">Latitude:  <span id="latitude"></span></p>
-        <p class="">Longitude:  <span id="longitude"></span></p>
-        <a class="btn btn-primary btn-lg rounded-pill checkIn" href="#" role="button">Check In</a>
+        <h3 class="">Find a bike Near You! </h3>
+        <p class="lead"> Hi Buddy! Let's find a bike station near you. Please click, to check in.</p>
+        <button class="btn btn-success btn-lg rounded-pill checkIn" href="#" role="button">Check In</button>
       </div>
+      <br/>
+      <br/>
+
+      <div id="my_bikeMap"></div>
 
       <footer class="container py-5 mt-auto py-md-5 border-top">
       <div class="row">
